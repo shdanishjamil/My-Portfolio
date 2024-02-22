@@ -179,9 +179,8 @@ main{
 
 #menu-icon{
     font-size: 3.6rem;
-    color: var(--text-color);
+    color: var(--header-text-color);
 }
-
 
 
 .home{
@@ -697,7 +696,9 @@ span{
 .social-media a:hover i.bxl-linkedin {
     color: #0077b5;
 }
-
+.contact{
+    padding-top: 10%;
+}
 
 
 /* BREAKPOINT */
@@ -733,6 +734,7 @@ span{
 }
 
 @media (max-width: 768px){
+    
     html{
         margin: 0;
         padding: 0;
@@ -761,7 +763,10 @@ span{
     font-size: 2rem;
     margin:3rem 0 ;
    }
+   
    .home{
+    padding-top: 30%;
+
     flex-direction: column;
    }
    .home h3{
@@ -798,6 +803,9 @@ span{
    }
 }
 @media (max-width: 617px){
+    .home{
+        padding-top: 20%;
+    }
     html{
         margin: 0;
         padding: 0;
@@ -808,6 +816,13 @@ span{
 }
 
 @media (max-width: 450px){
+   
+    .contact form button{
+        margin-top: 10%;
+    }
+    .contact form .input-box{
+        display:block ;
+    }
     html{
         margin: 0;
         padding: 0;
@@ -818,9 +833,15 @@ span{
     .contact form .input-box input{
         width: 100%;
     }
+    .home-content h3,h1{
+        font-size: 200%;
+    }
+    
 }
 
 @media (max-width: 365px){
+    
+    
     body{
         padding: 0;
         margin: 0;
