@@ -41,7 +41,9 @@ window.onscroll=()=>{
 };
 
 // scroll reaveal
-ScrollReveal({ 
+
+if (window.matchMedia("(min-width: 768px)").matches) {
+  ScrollReveal({ 
     reset: true,
     distance: '80px',
     duration: 2000,
@@ -51,6 +53,19 @@ ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+} else {
+  ScrollReveal({ 
+    reset: true,
+    distance: '20px',
+    duration: 2000,
+    delay: 200 
+});
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+}
+
 
 
 // typed multiple js
