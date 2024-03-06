@@ -180,7 +180,8 @@ main{
 #menu-icon{
     font-size: 3.6rem;
     color: var(--header-text-color);
-    display: none;  
+    display: none;
+
 }
 
 
@@ -190,9 +191,10 @@ main{
     align-items:center ;  
 }
 
-.home-img img{
-    width: 30vw;
+
+.home-img-svg{
     animation: floatImage 4s ease-in-out infinite;
+    width: 190vw;
 }
 
 @keyframes floatImage {
@@ -325,7 +327,9 @@ main{
 
 .read-more-text{
     font-size: 1.2rem;
+    font-weight: 200;
     color: var(--header-text-color);
+    text-align: left;
 }
 .about{
     display: flex;
@@ -426,11 +430,7 @@ span{
     transform: translateY(100%);
     transition: transform 0.3s ease-out;
 }
-.box p{
 
-    font-size: 1.2rem;
-
-}
 
 
 .box-container.open {
@@ -464,7 +464,7 @@ span{
     gap: 2.5rem;
 }
 
-.portfolio-container .portfolio-box{
+.portfolio-container .portfolio-box {
     cursor: pointer;
     position: relative;
     border-radius: 1rem;
@@ -472,10 +472,13 @@ span{
     display: flex;
 }
 
-.portfolio-box img{
+.portfolio-box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire box */
     transition: .5s ease;
     background-color: #000000;
+    aspect-ratio: 3/2;
 }
 
 .portfolio-box:hover img{
@@ -539,7 +542,7 @@ span{
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, .97);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -547,6 +550,18 @@ span{
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.5s ease;
+        }
+        .enlarged-details h4{
+            padding-bottom: 3vw;
+            text-align: center;
+            font-size: large;
+        }
+        .enlarged h4 {
+            font-size: 30px;
+        }
+        .enlarged p {
+            font-size: 20px;
+            text-align: justify;
         }
 
         .enlarged-content {
@@ -558,6 +573,7 @@ span{
         }
 
         .enlarged img {
+            border: 1px solid rgb(255, 255, 255);
             max-width: 60%;
             max-height: 80%;
             margin-right: 2rem;
@@ -616,7 +632,10 @@ span{
 .contact form textarea{
     resize: none;
 }
-
+#success-message{
+    color: var(--header-text-color);
+    opacity: 0;
+}
 .footer{
     display: flex;
     justify-content: space-between;
@@ -732,10 +751,15 @@ span{
     .footer{
         padding:2rem 3%;
     }
+    .enlarged-content h4{
+        font-size: 3vw;
+    }
+    .enlarged-content p{
+        font-size: 2vw;
+    }
 }
 
 @media (max-width: 768px){
-    
     html{
         margin: 0;
         padding: 0;
@@ -750,7 +774,7 @@ span{
     left: 0;
     width: 100%;
     padding: 1rem 3%;
-    background: var(--second-bg-color);
+    background: var(--main-color);
     border-top: .1rem solid rgba(0,0,0,.2);
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
     display: none;
@@ -780,7 +804,11 @@ span{
     width: 70vw;
     margin-top: 4rem;
    }
-
+   .home-img-svg{
+    margin-top: 5vw;
+    animation: floatImage 4s ease-in-out infinite;
+    width: 70vw;
+}
    .about{
     flex-direction: column-reverse;
    }
@@ -802,6 +830,17 @@ span{
    .portfolio-container{
     grid-template-columns: repeat(2,1fr);
    }
+   .enlarged-content {
+    flex-direction: column;
+}
+.enlarged-content h4{
+    margin-top: 10vw;
+    font-size: 5vw;
+}
+.enlarged-content p{
+    margin-top: 1vw;
+    font-size: 3vw;
+}
 }
 @media (max-width: 617px){
     .home{
@@ -814,10 +853,28 @@ span{
     .portfolio-container{
         grid-template-columns: 1fr;
     }
+    
+    .enlarged-content img{
+        margin-top: 5vw;
+        max-width: 100%; 
+        margin-right: 0rem;
+    }
+    .portfolio-box img {
+        filter: blur(3px);
+    }
+    .portfolio-box .portfolio-layer{
+        transform: none;
+    }
+    .portfolio-box .portfolio-layer{
+        background: linear-gradient(rgba(0,0,0,.5),black);
+    }
+    
 }
 
 @media (max-width: 450px){
-   
+   .services{
+    margin-top: 200%;
+   }
     .contact form button{
         margin-top: 10%;
     }
@@ -836,6 +893,9 @@ span{
     }
     .home-content h3,h1{
         font-size: 200%;
+    }
+    .enlarged-content img{
+        margin-top: 20vw;
     }
     
 }
