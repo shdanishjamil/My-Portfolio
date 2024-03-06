@@ -138,6 +138,13 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
-  
+  function disableAnchor() {
+  var anchor = document.getElementById('download-CV-Button');
+  anchor.removeAttribute('href');
+  setTimeout(function () {
+      anchor.setAttribute('href', '#');
+  }, 5000);
+}
+
   
   
